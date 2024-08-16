@@ -44,10 +44,6 @@
               />
             </div>
   
-           
-            
-
-  
             <div class="mb-4">
               <label for="estudiante" class="block text-sm font-medium text-gray-700">Estudiante:</label>
               <input 

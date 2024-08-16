@@ -43,7 +43,7 @@
               name="estudiante"
               type="text"
               v-model="form.estudiante"
-              rules="required|alpha"
+              rules="required"
               class="mt-1 p-2 w-full border rounded-md"
             />
             <ErrorMessage name="estudiante" class="text-red-500 text-sm" />
@@ -200,7 +200,7 @@
 
 <script>
 import { Form, Field, ErrorMessage, defineRule } from 'vee-validate';
-import { required, min, alpha, alpha_num } from '@vee-validate/rules';
+import { required, min, alpha, alpha_num , jpg} from '@vee-validate/rules';
 import AppNavbar from '@/components/AppNavbar.vue';
 import axios from 'axios';
 
