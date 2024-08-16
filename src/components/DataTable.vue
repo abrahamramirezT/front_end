@@ -77,6 +77,8 @@ export default {
     default: false,
   },
   },
+
+  
   methods: {
     editItem(item) {
   // Redirige a la ruta con el ID de la incidencia
@@ -94,9 +96,9 @@ async deleteItem(id) {
           // Realiza la solicitud DELETE a la API
           await axios.delete(`https://4ns4y61589.execute-api.us-east-1.amazonaws.com/Stage/delete_incidence/${id}`);
           alert('Incidencia eliminada exitosamente.');
+          this.$router.push('/home-admin');
 
-          // Refresca la lista de incidencias o remueve la incidencia eliminada de la lista
-          this.items = this.items.filter(item => item.id !== id);
+         
 
         } catch (error) {
           console.error('Error al eliminar la incidencia:', error);
