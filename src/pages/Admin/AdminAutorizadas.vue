@@ -4,7 +4,7 @@
     <AppNavbar :role="'admin'" class="w-64 bg-white shadow-lg" />
 
     <!-- Contenido Principal -->
-    <div class="flex-grow p-6">
+    <div class="flex-grow p-6 overflow-y-auto">
       <div class="bg-white shadow-md rounded-lg p-6">
         <h1 class="text-2xl font-semibold mb-6">Incidencias Autorizadas</h1>
         <DataTable

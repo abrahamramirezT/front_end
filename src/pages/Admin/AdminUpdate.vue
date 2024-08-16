@@ -146,19 +146,6 @@
             </div>
   
 
-            <div class="mb-4">
-  <label for="foto" class="block text-sm font-medium text-gray-700">Foto Actual:</label>
-  <div v-if="form.fto_base64">
-    <img :src="'data:image/jpeg;base64,' + form.fto_base64" alt="Foto" class="w-24 h-auto rounded-md mb-2" />
-  </div>
-  <input 
-    type="file" 
-    id="foto" 
-    @change="onFileChange" 
-    accept="image/*" 
-    class="mt-1 p-2 w-full border rounded-md"
-  />
-</div>
 
   
             <button 
@@ -222,11 +209,10 @@
       const data = {
         id: reporteId,
         estatus: this.form.estatus,
-        fto_base64: this.form.fto_base64, // Este campo solo se envía si se selecciona una imagen
       };
       
       try {
-        await axios.put(`https://4ns4y61589.execute-api.us-east-1.amazonaws.com/Stage/update_incidence/${reporteId}`, data);
+        await axios.put(`https://4ns4y61589.execute-api.us-east-1.amazonaws.com/Stage/update_status/${reporteId}`, data);
         alert('Incidencia actualizada exitosamente.');
         this.$router.push('/home-admin');
       } catch (error) {
