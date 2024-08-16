@@ -44,29 +44,9 @@
               />
             </div>
   
-            <div class="mb-4">
-              <label for="estatus" class="block text-sm font-medium text-gray-700">Estatus:</label>
-              <select 
-                id="estatus" 
-                v-model="form.estatus" 
-                required 
-                class="mt-1 p-2 w-full border rounded-md"
-              >
-                <option value="2">En Progreso</option>
-                <option value="3">Autorizada</option>
-              </select>
-            </div>
-  
-            <div class="mb-4">
-              <label for="foto" class="block text-sm font-medium text-gray-700">Subir Foto:</label>
-              <input 
-                type="file" 
-                id="foto" 
-                @change="onFileChange" 
-                accept="image/*" 
-                class="mt-1 p-2 w-full border rounded-md"
-              />
-            </div>
+           
+            
+
   
             <div class="mb-4">
               <label for="estudiante" class="block text-sm font-medium text-gray-700">Estudiante:</label>
@@ -151,6 +131,35 @@
                 disabled
               />
             </div>
+
+            <div class="mb-4">
+              <label for="estatus" class="block text-sm font-medium text-gray-700">Estatus:</label>
+              <select 
+                id="estatus" 
+                v-model="form.estatus" 
+                required 
+                class="mt-1 p-2 w-full border rounded-md"
+              >
+                <option value="2">En Progreso</option>
+                <option value="3">Autorizada</option>
+              </select>
+            </div>
+  
+
+            <div class="mb-4">
+  <label for="foto" class="block text-sm font-medium text-gray-700">Foto Actual:</label>
+  <div v-if="form.fto_base64">
+    <img :src="'data:image/jpeg;base64,' + form.fto_base64" alt="Foto" class="w-24 h-auto rounded-md mb-2" />
+  </div>
+  <input 
+    type="file" 
+    id="foto" 
+    @change="onFileChange" 
+    accept="image/*" 
+    class="mt-1 p-2 w-full border rounded-md"
+  />
+</div>
+
   
             <button 
               type="submit" 
@@ -201,7 +210,7 @@
             grado_nombre: incidencia.grado_nombre,
             grupo_nombre: incidencia.grupo_nombre,
             div_academica_nombre: incidencia.div_academica_nombre,
-            fto_base64: ''
+            fto_base64: incidencia.fto_base64 || ''
           };
         } catch (error) {
           console.error('Error al obtener la incidencia:', error);

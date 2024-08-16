@@ -51,7 +51,7 @@
     data() {
       return {
         items: [],
-        headers: ['ID', 'Título', 'Fecha', 'Descripción', 'Estudiante', 'Aula', 'Edificio', 'Matricula', 'Grado', 'Grupo', 'Division Academica','Status','Foto', 'Acciones'],
+        headers: ['ID', 'Título', 'Fecha', 'Descripción', 'Estudiante', 'Aula', 'Edificio', 'Matricula', 'Grado', 'Grupo', 'Division Academica','Status','Foto'],
       };
     },
     computed: {
@@ -103,7 +103,6 @@
           div_academica: divisionAcademica,
           estatus: incidencia.estatus,
           fto_url: incidencia.fto_url,
-          actions: true
 
         };
         

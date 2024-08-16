@@ -8,13 +8,16 @@
       <div class="bg-white shadow-md rounded-lg p-6">
         <h1 class="text-2xl font-semibold mb-6">Incidencias en Progreso</h1>
         <DataTable
-          title="Ver Todos"
-          :items="filteredItems"
-          :headers="headers"
-          @edit-item="editItem"
-          @delete-item="deleteItem"
-          :role="'admin'"
-        />
+  title="Ver Todos"
+  :items="filteredItems"
+  :headers="headers"
+  @edit-item="editItem"
+  @delete-item="deleteItem"
+  :role="'admin'"
+  :hideDeleteButton="true" 
+/>
+
+
       </div>
     </div>
   </div>
@@ -93,7 +96,6 @@ export default {
         };
         
       });
-      this.renderCharts();
     } catch (error) {
       console.error('Error al obtener las incidencias:', error);
       alert('Hubo un problema al cargar las incidencias.');

@@ -14,10 +14,10 @@
               <template v-if="key === 'actions'">
                 <!-- Si el rol es Admin, muestra Aprobar, Rechazar, Actualizar y Eliminar -->
                 <template v-if="role === 'admin'">
-                  <button @click="editItemAdmin(item)" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+                  <button v-if="!hideUpdateButton" @click="editItemAdmin(item)" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
                     Actualizar
                   </button>
-                  <button @click="deleteItem(item.id)" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">
+                  <button  v-if="!hideDeleteButton" @click="deleteItem(item.id)" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">
                     Eliminar
                   </button>
                 </template>
@@ -65,6 +65,14 @@ export default {
       type: String,
       required: true,
     },
+     hideDeleteButton: { // Nueva prop para ocultar el botón de "Eliminar"
+    type: Boolean,
+    default: false,
+  },
+  hideUpdateButton: { // Nueva prop para ocultar el botón de "Eliminar"
+    type: Boolean,
+    default: false,
+  },
   },
   methods: {
     editItem(item) {

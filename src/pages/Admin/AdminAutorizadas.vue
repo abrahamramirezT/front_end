@@ -14,6 +14,7 @@
           @edit-item="editItem"
           @delete-item="deleteItem"
           :role="'admin'"
+          :hideUpdateButton="true" 
         />
       </div>
     </div>
@@ -89,7 +90,6 @@ export default {
           estatus: incidencia.estatus,
           fto_url: incidencia.fto_url,
           actions: true
-
         };
       });
     } catch (error) {
