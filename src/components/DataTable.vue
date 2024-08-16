@@ -47,6 +47,9 @@
   </div>
 </template>
 <script>
+
+import axios from 'axios';
+
 export default {
   props: {
     title: {
@@ -85,6 +88,7 @@ editItemAdmin(item) {
 },
 
 async deleteItem(id) {
+  
       if (confirm("¿Estás seguro de que deseas eliminar esta incidencia?")) {
         try {
           // Realiza la solicitud DELETE a la API
